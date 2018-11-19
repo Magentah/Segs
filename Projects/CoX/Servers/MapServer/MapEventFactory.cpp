@@ -110,6 +110,7 @@ MapLinkEvent *MapEventFactory::CommandEventFromStream(BitStream & bs)
         case 67: return new DescriptionAndBattleCry;
         case 68: return new SouvenirDetailRequest;
         case 77: return new BrowserClose;
+        case 80: return new BugReport;
     }
     qCWarning(logMapEvents, "Unhandled command event type %d", opcode);
     return nullptr;

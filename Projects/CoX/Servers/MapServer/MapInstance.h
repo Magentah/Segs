@@ -99,6 +99,7 @@ class DeadNoGurneyOK;
 class ReceiveContactStatus;
 class ReceiveTaskDetailRequest;
 class SouvenirDetailRequest;
+class BugReport;
 
 // server<-> server event types
 struct ExpectMapClientRequest;
@@ -252,4 +253,5 @@ protected:
         void on_receive_contact_status(SEGSEvents::ReceiveContactStatus *ev);
         void on_receive_task_detail_request(SEGSEvents::ReceiveTaskDetailRequest *ev);
         void on_souvenir_detail_request(SEGSEvents::SouvenirDetailRequest* ev);
+        void on_bug_report(SEGSEvents::BugReport *ev);
 };

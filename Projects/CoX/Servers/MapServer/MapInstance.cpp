@@ -525,6 +525,9 @@ void MapInstance::dispatch( Event *ev )
         case evSouvenirDetailRequest:
             on_souvenir_detail_request(static_cast<SouvenirDetailRequest *>(ev));
             break;
+        case evBugReport:
+            on_bug_report(static_cast<BugReport *>(ev));
+            break;
         default:
             qCWarning(logMapEvents, "Unhandled MapEventTypes %u\n", ev->type()-MapEventTypes::base_MapEventTypes);
     }
@@ -2989,5 +2992,8 @@ void MapInstance::on_souvenir_detail_request(SouvenirDetailRequest* ev)
     session.addCommand<SouvenirDetail>(souvenir_detail);
 }
 
-
+void MapInstance::on_bug_report(BugReport *ev)
+{
+    qDebug("Bug Report Hit");
+}
 //! @}

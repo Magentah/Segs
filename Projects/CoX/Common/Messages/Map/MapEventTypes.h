@@ -149,6 +149,7 @@ enum MapEventTypes
     EVENT_DECL(MapEventTypes, evDescriptionAndBattleCry    ,267)
     EVENT_DECL(MapEventTypes, evSouvenirDetailRequest      ,268)
     EVENT_DECL(MapEventTypes, evBrowserClose               ,277)
+    EVENT_DECL(MapEventTypes, evBugReport                  ,280)
 
 
     END_EVENTS(MapEventTypes, 1500)

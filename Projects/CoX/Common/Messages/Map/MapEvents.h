@@ -627,6 +627,27 @@ public:
     EVENT_IMPL(MoveInspiration)
 
 };
+
+// [[ev_def:type]]
+class BugReport final : public MapLinkEvent
+{
+public:
+    // [[ev_def:field]]
+    QString bug_report;
+    BugReport() : MapLinkEvent(MapEventTypes::evBugReport)
+    {
+    }
+    void serializeto(BitStream &bs) const override
+    {
+        bs.StorePackedBits(1, 80);
+    }
+
+    void serializefrom(BitStream &bs) override
+    {
+        bs.GetString(bug_report);
+    }
+    EVENT_IMPL(BugReport)
+};
 } // end of SEGSEvents namespace
 
 #include "Messages/Map/Browser.h"
